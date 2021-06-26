@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <Header></Header>
-      <main className="pb-20">
+      <main className="min-h-screen bg-white pb-20 dark:bg-gray-600 text-black dark:text-white">
         <Switch>
           <Route exact path="/">
             <Home />

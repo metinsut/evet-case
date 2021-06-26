@@ -34,17 +34,17 @@ const Contact = () => {
           <p className="text-xl">Name</p>
           <input
             id="name"
-            className="border-2 text-xl p-2 h-12 w-form"
+            className="border-2 text-xl p-2 h-12 w-form dark:text-gray-700"
             {...register('name')}
           />
-          <p className="text-xl">{errors.firstName?.message}</p>
+          <p className="text-xl">{errors.name?.message}</p>
         </label>
 
         <label htmlFor="age">
           <p className="text-xl">Age</p>
           <input
             id="age"
-            className="border-2 text-xl p-2 h-12 w-form"
+            className="border-2 text-xl p-2 h-12 w-form dark:text-gray-700"
             {...register('age')}
           />
           <p className="text-xl">{errors.age?.message}</p>
@@ -54,7 +54,7 @@ const Contact = () => {
           <p className="text-xl">E-mail</p>
           <input
             id="email"
-            className="border-2 text-xl p-2 h-12 w-form"
+            className="border-2 text-xl p-2 h-12 w-form dark:text-gray-700"
             {...register('email')}
           />
           <p className="text-xl">{errors.email?.message}</p>
@@ -62,7 +62,7 @@ const Contact = () => {
 
         <input
           type="submit"
-          className="h-12 text-xl justify-self-end w-44 cursor-pointer hover:bg-gray-300"
+          className="h-12 text-xl justify-self-end w-44 cursor-pointer hover:bg-gray-300 dark:text-gray-900"
         />
         {success && (
           <div className="px-4 py-2 w-full text-2xl text-white bg-green-500">

@@ -2,11 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/twitter.png';
 import { useTranslation } from 'react-i18next';
+import toggleDarkMode from '../../utility/dark-mode';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const changeLanguage = lang => {
     i18n.changeLanguage(lang);
+  };
+
+  const handleDarkMode = e => {
+    toggleDarkMode(e.target.value);
   };
 
   return (
@@ -33,18 +38,45 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="justify-self-end grid grid-flow-col text-gray-200">
-        <div
-          className="cursor-pointer p-2 hover:text-white"
-          onClick={() => changeLanguage('en')}
-        >
-          EN
+      <div className="justify-self-end items-center grid gap-4 grid-flow-col text-gray-200 pr-6">
+        <div className="grid">
+          <label htmlFor="dark">
+            <input
+              type="radio"
+              id="dark"
+              name="radio"
+              value="dark"
+              onChange={handleDarkMode}
+              className="mr-2"
+            />
+            <span>Dark</span>
+          </label>
+          <label htmlFor="light">
+            <input
+              type="radio"
+              id="light"
+              name="radio"
+              value="light"
+              onChange={handleDarkMode}
+              className="mr-2"
+              defaultChecked
+            />
+            <span>Light</span>
+          </label>
         </div>
-        <div
-          className="cursor-pointer p-2 hover:text-white"
-          onClick={() => changeLanguage('tr')}
-        >
-          TR
+        <div>
+          <div
+            className="cursor-pointer hover:text-white"
+            onClick={() => changeLanguage('en')}
+          >
+            EN
+          </div>
+          <div
+            className="cursor-pointer hover:text-white"
+            onClick={() => changeLanguage('tr')}
+          >
+            TR
+          </div>
         </div>
       </div>
     </header>
